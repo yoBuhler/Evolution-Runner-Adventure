@@ -14,22 +14,23 @@ func _physics_process(delta):
 	motion.y = jump
 	
 	#lógica de pulo			
-	if Input.is_action_pressed("ui_up"):			
-		jump = 100
+	jump(delta)
 	
 	#lógica para movimentação
-	move(delta);
+	move(delta)
 	
 	#lógica para parar movimentação
-	stop(delta);
+	stop(delta)
 				
 	#lógica para manter o personagem parado caso nenhuma tecla esteja pressionada			
 	no_action(delta)
 				
 	#mover camera de acordo com o player
+# warning-ignore:return_value_discarded
 	move_and_slide(motion)
 	pass
 	
+# warning-ignore:unused_argument
 func move(delta):
 	#verifica se o jogador esta pressionando pra andar
 	if Input.is_action_pressed("ui_right"):
@@ -50,6 +51,9 @@ func move(delta):
 				speed -= speedCostAfterEmptyGas	
 	pass
 				
+# warning-ignore:function_conflicts_variable
+# warning-ignore:unused_argument
+# warning-ignore:function_conflicts_variable
 func stop(delta):
 	#verifica se o jogador esta pressionando pra andar
 	if Input.is_action_pressed("ui_left"):
@@ -59,12 +63,13 @@ func stop(delta):
 		
 		#diminui velocidade de movimento até chegar a zero
 		if speed > 0 :
-			speed -= 20;
+			speed -= 20
 		else:
 			speed = 0	
 			
 	pass
 				
+# warning-ignore:unused_argument
 func no_action(delta) :
 	if !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left") :				
 		motion.x = speed
@@ -75,7 +80,10 @@ func no_action(delta) :
 			speed = 0
 		
 	pass
-				
+
+#não ta funcionando 				
 func jump(delta):
+	if Input.is_action_pressed("ui_up"):			
+		jump = 100
 	
 	pass
