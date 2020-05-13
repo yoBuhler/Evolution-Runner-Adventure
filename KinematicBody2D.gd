@@ -3,19 +3,20 @@ extends KinematicBody2D
 var gas = 500
 var gasCost = 1
 var motion = Vector2()
-var jump = 10
+var jump = -400
+var gravity = 100
 var speed = 0
 var speedCostAfterEmptyGas = 5
 var stop
 
 func _physics_process(delta):
-	
+	print(speed)
 	#seta a altura
-	motion.y = jump
+	motion.y += gravity
 	
 	#lógica de pulo			
 	jump(delta)
-	
+		
 	#lógica para movimentação
 	move(delta)
 	
@@ -71,7 +72,7 @@ func stop(delta):
 				
 # warning-ignore:unused_argument
 func no_action(delta) :
-	if !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left") :				
+	if !Input.is_action_pressed("ui_right") and !Input.is_action_pressed("ui_left") :
 		motion.x = speed
 		
 		if speed > 0 :
@@ -83,7 +84,7 @@ func no_action(delta) :
 
 #não ta funcionando 				
 func jump(delta):
-	if Input.is_action_pressed("ui_up"):			
-		jump = 100
-	
+	if Input.is_action_pressed("ui_up"):
+		motion.y = jump
+		
 	pass
