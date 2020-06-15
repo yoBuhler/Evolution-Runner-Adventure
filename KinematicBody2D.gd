@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+var money = 0
 var gas = 500
 var gasCost = 1
 var motion = Vector2()
@@ -8,6 +9,13 @@ var gravity = 100
 var speed = 0
 var speedCostAfterEmptyGas = 5
 var stop
+var endMessage
+
+
+
+func _ready():
+	endMessage = get_node("EndMessage")
+	remove_child(endMessage)
 
 func _physics_process(delta):
 	print(speed)
@@ -25,7 +33,10 @@ func _physics_process(delta):
 				
 	#lógica para manter o personagem parado caso nenhuma tecla esteja pressionada			
 	no_action(delta)
-				
+	
+	#lógica para quando acabar o combustível
+	empty_gas(delta)
+	
 	#mover camera de acordo com o player
 # warning-ignore:return_value_discarded
 	move_and_slide(motion)
@@ -82,9 +93,19 @@ func no_action(delta) :
 		
 	pass
 
+# warning-ignore:unused_argument
+func empty_gas(delta) :
+	if speed == 0 and gas == 0:
+		add_child(endMessage)		
+	pass
+
 #não ta funcionando 				
 func jump(delta):
 	if Input.is_action_pressed("ui_up"):
 		motion.y = jump
 		
 	pass
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://Upgrade.tscn")

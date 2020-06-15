@@ -1,13 +1,22 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://pic/floor.jpg" type="Texture" id=3]
 [ext_resource path="res://pic/Fase 1/Floor_End_2.png" type="Texture" id=4]
 [ext_resource path="res://pic/Fase 1/Floor_End_1.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 31.1831, 31.3812 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 6 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 32.3905, 31.796 )
@@ -29,6 +38,55 @@ shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="car"]
 current = true
+
+[node name="EndMessage" type="Panel" parent="car"]
+anchor_left = 20.0
+anchor_top = 20.0
+anchor_right = 20.0
+anchor_bottom = 20.0
+margin_left = -300.0
+margin_top = -150.0
+margin_right = 300.0
+margin_bottom = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="car/EndMessage"]
+margin_top = 100.0
+margin_right = 600.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 3 )
+text = "Não foi dessa vez, tente novamente"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="car/EndMessage"]
+margin_left = 250.0
+margin_top = 200.0
+margin_right = 262.0
+margin_bottom = 220.0
+rect_min_size = Vector2( 51, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="car/EndMessage/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "OK"
+align = 1
+valign = 1
+percent_visible = -0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="floors" type="Node" parent="."]
 
@@ -515,3 +573,4 @@ texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floors/floor25"]
 shape = SubResource( 2 )
+[connection signal="pressed" from="car/EndMessage/Button" to="car" method="_on_Button_pressed"]
