@@ -3,12 +3,8 @@
 [ext_resource path="res://Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://TitleScreen.gd" type="Script" id=2]
 
-[sub_resource type="DynamicFont" id=5]
-size = 64
-font_data = ExtResource( 1 )
-
 [sub_resource type="DynamicFont" id=1]
-size = 48
+size = 64
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -20,6 +16,10 @@ size = 48
 font_data = ExtResource( 1 )
 
 [sub_resource type="DynamicFont" id=4]
+size = 48
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
 size = 24
 font_data = ExtResource( 1 )
 
@@ -47,7 +47,7 @@ margin_right = 1040.0
 margin_top = 4.0
 margin_right = 1040.0
 margin_bottom = 83.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 8
@@ -78,7 +78,7 @@ flat = true
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/Play"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -97,7 +97,7 @@ flat = true
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/Sobre"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -116,7 +116,7 @@ flat = true
 [node name="Label" type="Label" parent="Menu/CenterRow/Buttons/Créditos"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 5
@@ -148,7 +148,7 @@ flat = true
 [node name="Label" type="Label" parent="Menu/HBoxContainer/Button"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 2

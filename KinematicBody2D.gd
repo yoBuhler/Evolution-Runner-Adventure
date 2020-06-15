@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-var money = 0
-var gas = 500
+var gas
+var acceleration
+var topSpeed
 var gasCost = 1
 var motion = Vector2()
 var jump = -400
@@ -10,15 +11,20 @@ var speed = 0
 var speedCostAfterEmptyGas = 5
 var stop
 var endMessage
+var startCamera
 
 
 
 func _ready():
+	gas = get_node("/root/Singleton").gas
+	acceleration = get_node("/root/Singleton").acceleration
+	topSpeed = get_node("/root/Singleton").topSpeed
+	startCamera = get_node("Camera2D").get_camera_position().x
 	endMessage = get_node("EndMessage")
 	remove_child(endMessage)
 
 func _physics_process(delta):
-	print(speed)
+	#print(speed)
 	#seta a altura
 	motion.y += gravity
 	
@@ -51,8 +57,8 @@ func move(delta):
 		motion.x = speed
 		
 		#aumenta a velocidade no inicio até 500
-		if speed < 500 and gas > 0 :
-			speed += 5;
+		if speed < topSpeed and gas > 0 :
+			speed += acceleration;
 		
 		#lógica de diminuição de gas	
 		#lógica de inércia de velocidade quando o gás acabar		
@@ -96,7 +102,8 @@ func no_action(delta) :
 # warning-ignore:unused_argument
 func empty_gas(delta) :
 	if speed == 0 and gas == 0:
-		add_child(endMessage)		
+		add_child(endMessage)
+		get_node("/root/Singleton").money += round(int(get_node("Camera2D").get_camera_position().x - startCamera))
 	pass
 
 #não ta funcionando 				

@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-KinematicBody2d="*res://KinematicBody2D.gd"
+Singleton="*res://Singleton.gd"
 
 [display]
 
