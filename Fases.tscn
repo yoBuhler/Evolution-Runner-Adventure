@@ -1,0 +1,194 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Fases.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.950012
+margin_top = -0.950012
+margin_right = 0.949951
+margin_bottom = -0.950012
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 113.15
+margin_top = 66.301
+margin_right = 1153.0
+margin_bottom = 626.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1039.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 8
+text = "Fases"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 79.0
+margin_right = 1039.0
+margin_bottom = 525.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+margin_right = 1039.0
+margin_bottom = 446.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 1039.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_right = 343.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="Fase1" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer"]
+margin_right = 343.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 0, 32 )
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer/Fase1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Fase 1"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 347.0
+margin_right = 690.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
+margin_right = 343.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer2/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 3 )
+text = "Fase 2"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4"]
+margin_left = 694.0
+margin_right = 1039.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer3"]
+margin_right = 345.0
+margin_bottom = 32.0
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer3/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "Fase 3"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 529.0
+margin_right = 1039.0
+margin_bottom = 559.0
+rect_min_size = Vector2( 0, 30 )
+
+[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_right = 127.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 127, 0 )
+size_flags_vertical = 3
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
+text = "Upgrades"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 131.0
+margin_right = 970.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 974.0
+margin_right = 1039.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 65, 0 )
+size_flags_vertical = 3
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4/Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
+text = "Back"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer/Fase1" to="." method="_on_Fase1_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer4/Button" to="." method="_on_Button_pressed"]
